@@ -18,7 +18,6 @@ resource "aws_instance" "app_server" {
   ami                         = "ami-017fecd1353bcc96e"
   instance_type               = "t2.micro"
   associate_public_ip_address = true
-  subnet_id                   = "${aws_subnet.core-subnet-private-1.id}"
   tags = {
     Name = "ExampleAppServerInstance"
   }
