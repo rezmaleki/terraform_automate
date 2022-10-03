@@ -16,10 +16,9 @@ terraform {
 resource "aws_instance" "app_server" {
 
   ami                         = "ami-017fecd1353bcc96e"
-  vpc_security_group_ids      = [aws_security_group.ec2-sg.id]
   instance_type               = "t2.micro"
   associate_public_ip_address = true
-  subnet_id                   = "${aws_subnet.core-subnet-public-1.id}"
+  subnet_id                   = "${aws_subnet.core-subnet-private-1.id}"
   tags = {
     Name = "ExampleAppServerInstance"
   }
