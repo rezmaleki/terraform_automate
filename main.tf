@@ -19,7 +19,6 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids      = [aws_security_group.ec2-sg.id]
   instance_type               = "t2.micro"
   associate_public_ip_address = true
-  key_name                    = aws_key_pair.my_instance_key_pair.key_name
   subnet_id                   = "${aws_subnet.core-subnet-public-1.id}"
   tags = {
     Name = "ExampleAppServerInstance"
